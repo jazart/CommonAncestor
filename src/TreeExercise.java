@@ -55,23 +55,17 @@ public class TreeExercise {
 
         TreeNode<String > n = new TreeNode<String>("1", root0.findNodeOnTree("N"));
         TreeNode<String > n1 = new TreeNode<String>("1", root0.findNodeOnTree("N"));
-        //TreeNode<String > n2 = new TreeNode<String>("1", root0.findNodeOnTree("O"));
-        //TreeNode<String > n3 = new TreeNode<String>("1", root0.findNodeOnTree("O"));
 
         root0.findNodeOnTree("N").setLeftChild(n);
         root0.findNodeOnTree("N").setRightChild(n1);
-        //root0.findNodeOnTree("O").setLeftChild(n2);
-        //root0.findNodeOnTree("O").setRightChild(n3);
         root0.findNodeOnTree("M").setRightChild(n);
 
 
         n.setLevel(4);
         n1.setLevel(4);
-        //n2.setLevel(4);
-        //n3.setLevel(4);
 
-        //System.out.println(root0.findNodeOnTree("B").getLevel());
-        System.out.println(perfectTree(root0.findNodeOnTree("G")));
+        //Testing perfectTree Method, should return true
+        System.out.println(isPerfectTree(root0.findNodeOnTree("G")));
         Scanner input = new Scanner(System.in);
 
         System.out.println("Please enter two letters: ");
@@ -79,8 +73,8 @@ public class TreeExercise {
         TreeNode<String> node2;
 
 
-        node1 = root0.findNodeOnTree(input.nextLine().toUpperCase());
-        node2 = root0.findNodeOnTree(input.nextLine().toUpperCase());
+        node1 = root0.findNodeOnTree(input.next().toUpperCase());
+        node2 = root0.findNodeOnTree(input.next().toUpperCase());
 
         System.out.println("The lowest common ancestor is: " + findLowestCommonAncestor(node1, node2).getContents());
 
@@ -148,7 +142,7 @@ public class TreeExercise {
 
         }
 
-        public static boolean perfectTree(TreeNode<String> node){
+        public static boolean isPerfectTree(TreeNode<String> node){
             if(node == null){
                 return true;
             }
